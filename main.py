@@ -1,4 +1,3 @@
-from os import error
 from pity_calculator import PityCalculator
 
 # USER MANUAL:
