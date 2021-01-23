@@ -8,18 +8,21 @@ Close the workbook in Excel before running the script.
 
 # SUMMON LOG FORMAT
 
-The user should store an Excel-based summon log as follows:
+The user should use an Excel-based summon log that resemble something like the following:
 
 
 | Banner | Star_Level | ... [extra columns as desired, will not impact script] |
 | - | - | - |
-|   |   |   |
-|   |   |   |
+| Character Event | 3 |   |
+| Permanent | 4 |   |
 
-* The relative positions of the "Banner" and "Star_Level" columns do not affect the script.
-* If your banner and star level columns are named differently, remember to update the two **col_header** variables in **main.py**.
+* Place the Excel workbook in the same directory as **main.py** and **pity_calculator.py**.
+* The summon log worksheet should be a standard table with headers (no non-table rows on top, etc.)
+* Data required: (1) a column containing the banner for each summon, (2) a second column containing the star level of the summon result (3-5).
+* If your banner and star level columns are named differently, remember to update the two **col_header** variables in **main.py**. They are by default "Banner" and "Star_Level" respectively.
+* Note: The relative positions of the "Banner" and "Star_Level" columns do not affect the script (i.e., can be placed on any column in any order as long as they are on the same table match the variables).
 
-## Example file
+## Example Workbook
 
 For an example Excel workbook containing a Summon_Log, see **genshin.xlsx**.
 
