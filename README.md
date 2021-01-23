@@ -6,7 +6,6 @@ The script takes an Excel workbook and inserts the Pity countdown results into a
 
 Close the workbook in Excel before running the script.
 
-
 # SUMMON LOG FORMAT
 
 The user should store an Excel-based summon log as follows:
@@ -20,6 +19,9 @@ The user should store an Excel-based summon log as follows:
 * The relative positions of the "Banner" and "Star_Level" columns do not affect the script.
 * If your banner and star level columns are named differently, remember to update the **COL_HEADER** constants in **main.py**.
 
+## Example file
+
+For an example Excel workbook containing a Summon_Log, see **genshin.xlsx**.
 
 # PYTHON SCRIPT SETUP:
 
