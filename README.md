@@ -34,4 +34,4 @@ For an example Excel workbook containing a Summon_Log, see **genshin.xlsx**.
   * Change the **sheet_name** variable to the name of the worksheet containing the summon log.
 * Change the two **col_header** variables to match the respective column names in your Excel log.
 * Close the workbook in Excel **before** attempting to run **main.py**; otherwise, the Excel file will be protected and the script won't be able to write to the file.
-* You're ready! Run **main.py** in the environment of your choice and wait for completion (typically 2-3 seconds). Then reopen your Excel and chech the "Summon_Log" tab.
+* You're ready! Run **main.py** in the environment of your choice and wait for completion (typically 2-3 seconds). Then reopen your Excel and check out the "Summon_Log" tab.
