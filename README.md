@@ -17,7 +17,7 @@ The user should store an Excel-based summon log as follows:
 |   |   |   |
 
 * The relative positions of the "Banner" and "Star_Level" columns do not affect the script.
-* If your banner and star level columns are named differently, remember to update the **COL_HEADER** constants in **main.py**.
+* If your banner and star level columns are named differently, remember to update the two **col_header** variables in **main.py**.
 
 ## Example file
 
@@ -27,8 +27,8 @@ For an example Excel workbook containing a Summon_Log, see **genshin.xlsx**.
 
 * Store the Excel workbook in the same folder as the python files.
 * In **main.py**:
-  * Change the **FILENAME** constant to the name of the Excel workbook.
-  * Change the **SHEET_NAME** constant to the name of the worksheet containing the summon log
-* Change the two **COL_HEADER** variables below to match the respective column names in your Excel.
-* Close the workbook in excel **before** attempting to run **main.py**; otherwise, the Excel file will be protected and the script won't be able to write to the file.
+  * Change the **file_name** variable to the name of the Excel workbook.
+  * Change the **sheet_name** variable to the name of the worksheet containing the summon log.
+* Change the two **col_header** variables to match the respective column names in your Excel log.
+* Close the workbook in Excel **before** attempting to run **main.py**; otherwise, the Excel file will be protected and the script won't be able to write to the file.
 * You're ready! Run **main.py** in the environment of your choice and wait for completion (typically 2-3 seconds). Then reopen your Excel and chech the "Summon_Log" tab.
