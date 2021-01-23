@@ -19,8 +19,8 @@ The user should use an Excel-based summon log that resemble something like the f
 * Place the Excel workbook in the same directory as **main.py** and **pity_calculator.py**.
 * The summon log worksheet should be a standard table with headers (no non-table rows on top, etc.)
 * Data required: (1) a column containing the banner for each summon, (2) a second column containing the star level of the summon result (3-5).
-* If your banner and star level columns are named differently, remember to update the two **col_header** variables in **main.py**. They are by default "Banner" and "Star_Level" respectively.
-* Note: The relative positions of the "Banner" and "Star_Level" columns do not affect the script (i.e., can be placed on any column in any order as long as they are on the same table match the variables).
+* If your banner and star level columns are named differently, remember to update the two **col_header** variables in **main.py**. Alternatively, you can change your column headers in Excel to match the script defaults for the two columns - "Banner" and "Star_Level" - respectively.
+* Note: The relative positions of the "Banner" and "Star_Level" columns do not affect the script (i.e., they can be placed on any column in any order as long as they are on the same table and match the variable names in **main.py**).
 
 ## Example Workbook
 
