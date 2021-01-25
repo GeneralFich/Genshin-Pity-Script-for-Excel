@@ -1,45 +1,51 @@
+import os
 from tkinter import *
 from pity_calculator import PityCalculator
 
-# TODO: Make GUI look good
-# TODO: Link GUI elements to variables, functions, and objects
-# TODO: Store default values for file name, etc. in .txt file
-
 window = Tk()
 window.title("Genshin Pity Script for Excel")
-window.minsize(width=400, height=600)
+window.config(padx=20, pady=20)
 
 title_label = Label(text="Genshin Pity Script Runner",
-                    font=("Arial", 12, "bold"),
-                    anchor="Left")
-title_label.pack()
+                    font=("Calibri", 14, "bold"))
+title_label.grid(row=0, column=0)
+title_label.config(pady=10)
 
-# USER MANUAL:
-# 1) Store the Excel workbook in the same folder as this python file.
-# 2) Change the file_name constant below to the name of the Excel workbook.
-# 3) Change the sheet_name constant below to the name of the worksheet
-# that contains the log of summon data.
+select_label = Label(text="Select the Excel workbook to use:")
+select_label.grid(row=1, column=0)
 
-filename_label = Label(text="Enter Excel file name with extension:",
-                       font=("Arial", 12))
-filename_label.pack()
-filename_field = Entry()
-filename_field.pack()
+file_list = [f for f in os.listdir(os.getcwd())
+             if os.path.isfile(f) and
+             (f"{f}".endswith(".xlsx") or f"{f}".endswith(".xls"))
+]
+listbox = Listbox(height=len(file_list))
+for i, f in enumerate(file_list):
+    listbox.insert(i, f)
 
-file_name = "genshin.xlsx"
-sheet_name = "Summon_Log"
+filename_selected = ""
+def select_file_from_listbox(event):
+    global filename_selected
+    filename_selected = listbox.get(listbox.curselection())
+listbox.bind("<<ListboxSelect>>", select_file_from_listbox)
+listbox.grid(row=2, column=0)
 
-# 4) Change the two variables below to match the respective column names
-# in Excel.
-banner_col_header = "Banner"
-starlvl_col_header = "Star_Level"
+def start_calculator():
+    sheet_name = "Summon_Log"
+    banner_col_header = "Banner"
+    starlvl_col_header = "Star_Level"
+    
+    print(filename_selected, sheet_name, banner_col_header, starlvl_col_header)
+    
+    # FIXME: Exception in Tkinter callback. Try refactoring pity_calculator
+    # to non-OOP implementation
+    # if filename_selected != "":
+    #     pity_calculator = PityCalculator(
+    #         filename_selected, sheet_name, banner_col_header, starlvl_col_header
+    #     )
+    #     window.destroy()
 
-# 5) Make sure the workbook is NOT open in Excel; otherwise, the file will
-# be protected and the script won't be able to write to the file.
-# 6) You're ready! Run script and wait for completion. Then reopen your Excel.
 
-calculator = PityCalculator(
-    file_name, sheet_name, banner_col_header, starlvl_col_header
-)
+run_button = Button(text="Run Script", command=start_calculator)
+run_button.grid(row=3, column=0)
 
 window.mainloop()
